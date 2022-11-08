@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { Text, View, Image, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 import styles from "./styles";
 import user64 from "../../assets/user64.png";
 import pointer16 from "../../assets/pointer16.png";
@@ -17,7 +21,7 @@ import info24 from "../../assets/info24.png";
 import question24 from "../../assets/question24.png";
 import settings24 from "../../assets/settings24.png";
 
-export default function UserProfile() {
+export default function UserProfile({ navigation: { goBack, navigate } }) {
   return (
     <LinearGradient
       colors={['#014442', '#78A967']}
@@ -25,7 +29,7 @@ export default function UserProfile() {
       end={{x:1, y:1}}
       style={{flex:1, padding:'10%'}}>
 
-      <Pressable>
+      <Pressable onPress={() => goBack()}>
         <Image source={x16} style={{width:16, height:16}}/>
       </Pressable>
 
