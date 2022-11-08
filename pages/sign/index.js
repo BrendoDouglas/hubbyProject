@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Text, TouchableOpacity, View } from 'react-native';
+import React from 'react'
+import styles from './styles'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+export default function Login(){
+    return(
+        <LinearGradient 
+            style={styles.background}
+            colors={['#014442', '#78A967']}
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 1}}    
+        >
+             
+            <View style={styles.container}>
+                <View style={styles.user}>
+                    
+                </View>
+                <View style={styles.password}>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+                </View>
+                <Text style={styles.fixLogin}>Manter Conectado</Text>
+                <TouchableOpacity style={styles.buttonLogin}>
+                    <Text style={styles.textLogin}>ENTRAR</Text>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Text style={styles.textMissPass}>Esqueceu sua senha?</Text>
+                </TouchableOpacity>
+            </View>      
+      </LinearGradient>
+    );
+};
