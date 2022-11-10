@@ -8,8 +8,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
+/**
+ * @returns NavigationContainer para navegar entre as paginas
+ */
 export default function App() {
   return (
+    /**uso 'headerShown:false' no 'screenOptions' para esconder o header que ele cria para as paginas.
+     * e com o 'contentStyle: flex:1' faco com que as paginas criadas tenham tamanho de 100% da view */ 
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Signup" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
         <Stack.Screen name="Home" component={Home}/>
@@ -20,6 +25,9 @@ export default function App() {
   );
 };
 
+/**
+ * @returns tela provisoria ate implementacao da tela de 'login'
+ */
 function Home({ navigation }) {
   return (
     <View style={styles.container}>

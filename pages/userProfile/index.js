@@ -2,10 +2,8 @@ import * as React from 'react';
 import { Text, View, Image, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import styles from "./styles";
+
 import user64 from "../../assets/user64.png";
 import pointer16 from "../../assets/pointer16.png";
 import x16 from "../../assets/x16.png";

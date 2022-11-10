@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Pressable } from 'react-native';
+import { Text, View, Image, TextInput, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+
+import styles from "./styles";
 
 import icone from "../../assets/icone.png";
 import google32 from "../../assets/google32.png";
@@ -15,11 +16,11 @@ export default function Signup({ navigation: { goBack, navigate } }) {
       colors={['#014442', '#78A967']}
       start={{x: 0, y: 0}}
       end={{x:1, y:1}}
-      style={{marginBottom: -40, padding: 40, flex:1}}>
+      style={{ padding: 40, flex: 1}}>
 
       <View style={styles.logopalavra}>
         <Image source={icone} style={{width:64, height:64}}/>
-        <Text style={{fontSize:40, color: 'white', marginLeft:10}}>
+        <Text style={styles.titleLogo}>
           <Text style={{fontWeight:600}}>HUB</Text>
           by
         </Text>
@@ -57,11 +58,11 @@ export default function Signup({ navigation: { goBack, navigate } }) {
       </View>
 
       <View style={{flexDirection:'row', alignItems:'center', padding:20,}}>
-        <View style={{flex: 1, height: 1, backgroundColor:'#fff'}} />
+        <View style={styles.lineSeparator} />
         <View>
           <Text style={{width: 180, textAlign:'center', color:'#fff'}}>Ou registre-se utilizando</Text>
         </View>
-        <View style={{flex: 1, height: 1, backgroundColor:'#fff'}} />
+        <View style={styles.lineSeparator} />
       </View>
 
       <View style={styles.orRegister}>
@@ -82,72 +83,3 @@ export default function Signup({ navigation: { goBack, navigate } }) {
   );
 }
 
-const styles = StyleSheet.create({
-  logopalavra: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 20,
-  },
-  formRegister: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFFFFFE6',
-    borderRadius:15,
-    padding: 20,
-    marginTop: 20,
-  },
-  orRegister: {
-    width: '100%',
-    padding: 20,
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFFE6',
-    borderRadius:15,
-  },
-  input: {
-    width: '100%',
-    backgroundColor: 'white',
-    height: 33,
-    padding:15,
-    margin:15
-  },
-  buttonRegister: {
-    backgroundColor: "#EF691EC2",
-    height: 48,
-    width: '100%',
-    borderRadius: 25,
-    marginTop: 20,
-    alignItems: "center",
-    justifyContent: 'center',
-    borderColor: 'black',
-    borderWidth: 1,
-  },
-  textButtonRegister: {
-    color: 'white',
-    fontSize: 22,
-    fontWeight: 500,
-  },
-  termsUse: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    marginTop: 20
-  },
-  textLink: {
-    textDecorationLine:'underline',
-    color:'blue',
-    marginLeft: 1,
-    marginRight: 1,
-    fontSize: 13,
-  },
-  inputIcon: {
-    width: '100%',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-  }
-});
