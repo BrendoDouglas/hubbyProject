@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from "./styles";
 
-import icone from "../../assets/icone.png";
+import icon from "../../assets/icon.png";
 import google32 from "../../assets/google32.png";
 import person24 from "../../assets/person24.png";
 import lock24 from "../../assets/lock24.png";
@@ -19,7 +19,7 @@ export default function Signup({ navigation: { goBack, navigate } }) {
       style={{ padding: 40, flex: 1}}>
 
       <View style={styles.logopalavra}>
-        <Image source={icone} style={{width:64, height:64}}/>
+        <Image source={icon} style={{width:64, height:64}}/>
         <Text style={styles.titleLogo}>
           <Text style={{fontWeight:600}}>HUB</Text>
           by
