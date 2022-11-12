@@ -40,7 +40,7 @@ export default function Signup({ navigation: { goBack, navigate } }) {
           <TextInput placeholder='E-mail' style={styles.input} placeholderTextColor='#4d4d4d80'/>
         </View>
         
-        <Pressable style={styles.buttonRegister}>
+        <Pressable style={styles.buttonRegister} onPress={() => navigate('MainMenu')}>
           <Text style={styles.textButtonRegister}>REGISTRAR</Text>
         </Pressable>
 
