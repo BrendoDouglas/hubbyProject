@@ -2,6 +2,7 @@ import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import UserProfile from './pages/userProfile';
+import Sign from './pages/sign';
 import Signup from './pages/signup';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -16,8 +17,9 @@ export default function App() {
     /**uso 'headerShown:false' no 'screenOptions' para esconder o header que ele cria para as paginas.
      * e com o 'contentStyle: flex:1' faco com que as paginas criadas tenham tamanho de 100% da view */ 
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
+      <Stack.Navigator initialRouteName="Sign" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
         <Stack.Screen name="Home" component={Home}/>
+        <Stack.Screen name="Sign" component={Sign}/>
         <Stack.Screen name="Signup" component={Signup}/>
         <Stack.Screen name="UserProfile" component={UserProfile}/>
       </Stack.Navigator>
@@ -31,7 +33,7 @@ export default function App() {
 function Home({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>imagina a pagina de login mt pica aqui</Text>
+      <Text style={{with:300}}>imagina a pagina de login mt pica aqui</Text>
       <Pressable style={styles.botao} onPress={() => navigation.navigate('UserProfile')}>
         <Text>ir para "ver mais"</Text>
       </Pressable>

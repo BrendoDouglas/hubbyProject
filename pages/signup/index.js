@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Text, View, Image, TextInput, Pressable } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -21,7 +21,7 @@ export default function Signup({ navigation: { goBack, navigate } }) {
       <View style={styles.logopalavra}>
         <Image source={logo} style={{width:64, height:64}}/>
         <Text style={styles.titleLogo}>
-          <Text style={{fontWeight:600}}>HUB</Text>
+          <Text style={styles.bold}>HUB</Text>
           by
         </Text>
       </View>
@@ -46,13 +46,8 @@ export default function Signup({ navigation: { goBack, navigate } }) {
 
         <View style={styles.termsUse}>
           <Text style={{fontSize: 13,}}>
-            Ao clicar no botão "Registrar" você concorda e aceita os
-            <Pressable>
-              <Text style={styles.textLink}>
-                Termos e Condições
-              </Text>
-            </Pressable>
-            de uso do aplicativo.
+            Ao clicar no botão "Registrar" você concorda e aceita os <Text style={styles.textLink} onPress={() => navigate('Home')}>
+              Termos e Condições</Text> de uso do aplicativo.
           </Text>
         </View>
       </View>
@@ -68,13 +63,8 @@ export default function Signup({ navigation: { goBack, navigate } }) {
       <View style={styles.orRegister}>
         <Image source={google32} style={{width:32, height:32, marginBottom: 15}}/>
         <View>
-          <Text style={{fontSize: 13,}}>
-            Já possui uma conta?
-            <Pressable>
-              <Text style={styles.textLink}>
-                Entrar
-              </Text>
-            </Pressable>
+          <Text style={{fontSize: 13}}>
+            Já possui uma conta? <Text style={styles.textLink}>Entrar</Text>
           </Text>
         </View>
       </View>

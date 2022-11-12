@@ -35,7 +35,7 @@ export default function UserProfile({ navigation: { goBack, navigate } }) {
         <Image source={user64} style={{width:64, height:64}}/>
         <Text style={styles.titleWhite}>Aline de Campos</Text>
         <View style={styles.vImageText}>
-          <Image source={pointer16} style={{width:16, height:16}}/>
+          <Image source={pointer16} style={{width:16, height:16,}}/>
           <Text style={styles.textWhite}> Porto Alegre, RS </Text>
         </View>
         <View style={styles.vImageText}>

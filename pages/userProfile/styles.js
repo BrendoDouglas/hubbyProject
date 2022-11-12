@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
       margin: 4,
       flexDirection: "row",
       alignItems: "center",
-      padding: 15
+      paddingLeft: 15,
     },
     textWhite: {
       color: "white",
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
       padding: 15
     },
     vImageText: {
-      flex:1,
       flexDirection:'row',
       alignItems: "center",
     },

@@ -1,6 +1,9 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+    bold: {
+      fontWeight: '600',
+    },
     logopalavra: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -30,10 +33,10 @@ const styles = StyleSheet.create({
       borderRadius:15,
     },
     input: {
-      width: '100%',
+      width: '85%',
       backgroundColor: 'white',
       height: 33,
-      padding:15,
+      paddingLeft:15,
       margin:15
     },
     buttonRegister: {
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
     textButtonRegister: {
       color: 'white',
       fontSize: 22,
-      fontWeight: 500,
+      fontWeights: 500,
     },
     termsUse: {
       flexDirection: 'row',
@@ -62,8 +65,6 @@ const styles = StyleSheet.create({
     textLink: {
       textDecorationLine:'underline',
       color:'blue',
-      marginLeft: 1,
-      marginRight: 1,
       fontSize: 13,
     },
     inputIcon: {
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
       flex: 1,
       height: 1,
       backgroundColor:'#fff'
-    }
+    },
   });
   
 export default styles;
