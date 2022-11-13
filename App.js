@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View,ScrollView } from 'react-native';
 
 import UserProfile from './pages/userProfile';
 import Sign from './pages/sign';
@@ -17,6 +17,7 @@ export default function App() {
   return (
     /**uso 'headerShown:false' no 'screenOptions' para esconder o header que ele cria para as paginas.
      * e com o 'contentStyle: flex:1' faco com que as paginas criadas tenham tamanho de 100% da view */ 
+    
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Signup" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
         <Stack.Screen name="Home" component={Home}/>
@@ -25,7 +26,6 @@ export default function App() {
         <Stack.Screen name="MainMenu" component={MainMenu}/>
         <Stack.Screen name="UserProfile" component={UserProfile}/>
       </Stack.Navigator>
-      
     </NavigationContainer>
   );
 };

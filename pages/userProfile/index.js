@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, Image, Pressable } from 'react-native';
+import { Text, View, Image, Pressable, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from "./styles";
@@ -21,15 +21,19 @@ import settings24 from "../../assets/settings24.png";
 
 export default function UserProfile({ navigation: { goBack, navigate } }) {
   return (
+    
+    <ScrollView>
     <LinearGradient
       colors={['#014442', '#78A967']}
       start={{x: 0, y: 0}}
       end={{x:1, y:1}}
       style={{flex:1, padding:'10%'}}>
 
-      <Pressable onPress={() => goBack()}>
-        <Image source={x16} style={{width:16, height:16}}/>
-      </Pressable>
+      <View style={{alignItems:'flex-start'}}>
+        <Pressable onPress={() => goBack()}>
+          <Image source={x16} style={{width:24, height:24}}/>
+        </Pressable>
+      </View>
 
       <View style={styles.container}>
         <Image source={user64} style={{width:64, height:64}}/>
@@ -88,5 +92,6 @@ export default function UserProfile({ navigation: { goBack, navigate } }) {
       </View>
 
     </LinearGradient>
+    </ScrollView>
   );
 };
