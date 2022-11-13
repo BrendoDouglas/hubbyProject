@@ -1,7 +1,7 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 import MapView from 'react-native-maps';
-import { StyleSheet, Text, View, Image, Pressable, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image, Pressable, FlatList, StatusBar } from 'react-native';
 
 import user64 from "../../assets/user64.png";
 import pointer16 from "../../assets/pointer16.png";
@@ -35,7 +35,7 @@ const DATA = [
     img: careca,
     nameEstablishment: 'Reunião dos carecas',
     distance: '???',
-    category: '??????????????????',
+    category: '?????????????????',
     events: '???'
   },
 ];
@@ -153,7 +153,8 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   header: {
-    padding: '10%',
+    padding: '5%',
+    paddingTop: StatusBar.currentHeight,
     paddingBottom: 0,
     flexDirection: 'row',
     marginBottom: 10,

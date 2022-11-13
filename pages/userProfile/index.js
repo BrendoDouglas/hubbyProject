@@ -22,12 +22,12 @@ import settings24 from "../../assets/settings24.png";
 export default function UserProfile({ navigation: { goBack, navigate } }) {
   return (
     
-    <ScrollView>
     <LinearGradient
       colors={['#014442', '#78A967']}
       start={{x: 0, y: 0}}
       end={{x:1, y:1}}
       style={{flex:1, padding:'10%'}}>
+      <ScrollView >
 
       <View style={{alignItems:'flex-start'}}>
         <Pressable onPress={() => goBack()}>
@@ -91,7 +91,7 @@ export default function UserProfile({ navigation: { goBack, navigate } }) {
         </Pressable>
       </View>
 
+      </ScrollView>
     </LinearGradient>
-    </ScrollView>
   );
 };
