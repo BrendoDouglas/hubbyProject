@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     textButton: {
       color: "#FFFFFFdd",
-      padding: 15
+      paddingLeft: 15
     },
     vImageText: {
       flexDirection:'row',
