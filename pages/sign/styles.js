@@ -86,23 +86,24 @@ const styles = StyleSheet.create({
         borderRadius: 5
     },
     fixLogin: {
-        marginTop: 22,
-        marginLeft: 24,
+        marginLeft: 10,
         width: 227
     },
     buttonLogin: {
         backgroundColor: '#EF691E',
-        marginTop: 40,
+        marginTop: 30,
         width: 258,
         height: 47,
         borderRadius: 30,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderColor:'black',
+        borderWidth:1
     },
     textLogin: {
         color: '#FFF',
         fontSize: 22,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
   });
 

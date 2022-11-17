@@ -40,20 +40,20 @@ const styles = StyleSheet.create({
       margin:15
     },
     buttonRegister: {
-      backgroundColor: "#EF691EC2",
-      height: 48,
-      width: '100%',
-      borderRadius: 25,
-      marginTop: 20,
-      alignItems: "center",
-      justifyContent: 'center',
-      borderColor: 'black',
-      borderWidth: 1,
+        backgroundColor: '#EF691E',
+        marginTop: 10,
+        width: 258,
+        height: 47,
+        borderRadius: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderColor:'black',
+        borderWidth:1
     },
     textButtonRegister: {
-      color: 'white',
-      fontSize: 22,
-      fontWeights: 500,
+        color: '#FFF',
+        fontSize: 22,
+        fontWeight: 'bold',
     },
     termsUse: {
       flexDirection: 'row',

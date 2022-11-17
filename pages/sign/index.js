@@ -1,7 +1,9 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import { Text, TouchableOpacity, View, Image, TextInput } from 'react-native';
 
-import React from 'react'
+import Checkbox from 'expo-checkbox';
+
+import React, { useState } from 'react'
 import styles from './styles'
 
 import logo from "../../assets/logo.png";
@@ -10,6 +12,9 @@ import person24 from "../../assets/person24.png";
 import lock24 from "../../assets/lock24.png";
 
 export default function Login({ navigation: { goBack, navigate } }){
+
+    const [isChecked, setChecked] = useState(false);
+
     return(
         <LinearGradient 
             colors={['#014442', '#78A967']}
@@ -36,8 +41,14 @@ export default function Login({ navigation: { goBack, navigate } }){
                     <Image source={lock24} style={{width:24, height:24}}/>
                     <TextInput placeholder='Senha' style={styles.input} placeholderTextColor='#4d4d4d80'/>
                 </View>
-
-                <Text style={styles.fixLogin}>Manter Conectado</Text>
+                <View style={{flexDirection:'row', alignSelf:'flex-start', marginTop:10}}>
+                    <Checkbox
+                        style={styles.checkbox}
+                        value={isChecked}
+                        onValueChange={setChecked}
+                        color={isChecked ? 'black' : undefined}/>
+                    <Text style={styles.fixLogin}>Manter Conectado</Text>
+                </View>
                 <TouchableOpacity style={styles.buttonLogin}>
                     <Text style={styles.textLogin}>ENTRAR</Text>
                 </TouchableOpacity>
