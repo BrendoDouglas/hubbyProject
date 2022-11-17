@@ -32,12 +32,12 @@ export default function Signup({ navigation: { goBack, navigate } }) {
           <TextInput placeholder='Usuario' style={styles.input} placeholderTextColor='#4d4d4d80'/>
         </View>
         <View style={styles.inputIcon}>
-          <Image source={lock24} style={{width:24, height:24}}/>
-          <TextInput placeholder='Senha' style={styles.input} placeholderTextColor='#4d4d4d80'/>
-        </View>
-        <View style={styles.inputIcon}>
           <Image source={email24} style={{width:24, height:24}}/>
           <TextInput placeholder='E-mail' style={styles.input} placeholderTextColor='#4d4d4d80'/>
+        </View>
+        <View style={styles.inputIcon}>
+          <Image source={lock24} style={{width:24, height:24}}/>
+          <TextInput placeholder='Senha' style={styles.input} placeholderTextColor='#4d4d4d80'/>
         </View>
         
         <Pressable style={styles.buttonRegister} onPress={() => navigate('MainMenu')}>
@@ -64,7 +64,7 @@ export default function Signup({ navigation: { goBack, navigate } }) {
         <Image source={google32} style={{width:32, height:32, marginBottom: 15}}/>
         <View>
           <Text style={{fontSize: 13}}>
-            Já possui uma conta? <Text style={styles.textLink}>Entrar</Text>
+            Já possui uma conta? <Text onPress={() => navigate('Sign')} style={styles.textLink}>Entrar</Text>
           </Text>
         </View>
       </View>

@@ -19,7 +19,7 @@ export default function App() {
      * e com o 'contentStyle: flex:1' faco com que as paginas criadas tenham tamanho de 100% da view */ 
     
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Signup" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
+      <Stack.Navigator initialRouteName="Sign" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="Sign" component={Sign}/>
         <Stack.Screen name="Signup" component={Signup}/>
