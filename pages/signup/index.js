@@ -10,7 +10,30 @@ import person24 from "../../assets/person24.png";
 import lock24 from "../../assets/lock24.png";
 import email24 from "../../assets/email24.png";
 
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase-auth';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './Firebase/firebaseConfig';
+
 export default function Signup({ navigation: { goBack, navigate } }) {
+
+  const [email, setEmail] = React.useState('')
+  const [password, setPassword] = React.useState('')
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const handleCreateAccount = () => {
+    createUserWithEmailAndPassword(auth,email,password)
+    .then(() => {
+      console.log('Account Created!')
+      const user = userCredential.user;
+      console.log(user)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
+
   return (
     <LinearGradient
       colors={['#014442', '#78A967']}
@@ -33,11 +56,11 @@ export default function Signup({ navigation: { goBack, navigate } }) {
         </View>
         <View style={styles.inputIcon}>
           <Image source={email24} style={{width:24, height:24}}/>
-          <TextInput placeholder='E-mail' style={styles.input} placeholderTextColor='#4d4d4d80'/>
+          <TextInput onChangeText={(text) => setEmail(text)} placeholder='E-mail' style={styles.input} placeholderTextColor='#4d4d4d80'/>
         </View>
         <View style={styles.inputIcon}>
           <Image source={lock24} style={{width:24, height:24}}/>
-          <TextInput placeholder='Senha' style={styles.input} placeholderTextColor='#4d4d4d80'/>
+          <TextInput onChangeText={(text) => setPassword(text)} placeholder='Senha' style={styles.input} placeholderTextColor='#4d4d4d80'/>
         </View>
         
         <Pressable style={styles.buttonRegister} onPress={() => navigate('MainMenu')}>
@@ -46,7 +69,7 @@ export default function Signup({ navigation: { goBack, navigate } }) {
 
         <View style={styles.termsUse}>
           <Text style={{fontSize: 13,}}>
-            Ao clicar no botão "Registrar" você concorda e aceita os <Text style={styles.textLink} onPress={() => navigate('Home')}>
+            Ao clicar no botão "Registrar" você concorda e aceita os <Text style={styles.textLink} onPress={handleCreateAccount}>
               Termos e Condições</Text> de uso do aplicativo.
           </Text>
         </View>

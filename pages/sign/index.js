@@ -11,9 +11,32 @@ import google32 from "../../assets/google32.png";
 import person24 from "../../assets/person24.png";
 import lock24 from "../../assets/lock24.png";
 
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase-auth';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './Firebase/firebaseConfig';
+
 export default function Login({ navigation: { goBack, navigate } }){
 
     const [isChecked, setChecked] = useState(false);
+
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const handleSignIn = () => {
+        signInWithEmailAndPassword(auth,email,password)
+        .then(() => {
+          console.log('Signed In!')
+          const user = userCredential.user;
+          console.log(user)
+        })
+        .catch(error => {
+          console.log(error)
+        })
+      }
+
 
     return(
         <LinearGradient 
@@ -34,12 +57,12 @@ export default function Login({ navigation: { goBack, navigate } }){
                 
                 <View style={styles.inputIcon}>
                     <Image source={person24} style={{width:24, height:24}}/>
-                    <TextInput placeholder='Usuario' style={styles.input} placeholderTextColor='#4d4d4d80'/>
+                    <TextInput onChangeText={(text) => setEmail(text)} placeholder='Usuario' style={styles.input} placeholderTextColor='#4d4d4d80'/>
                 </View>
                     
                 <View style={styles.inputIcon}>
                     <Image source={lock24} style={{width:24, height:24}}/>
-                    <TextInput placeholder='Senha' style={styles.input} placeholderTextColor='#4d4d4d80'/>
+                    <TextInput onChangeText={(text) => setPassword(text)} placeholder='Senha' style={styles.input} placeholderTextColor='#4d4d4d80'/>
                 </View>
                 <View style={{flexDirection:'row', alignSelf:'flex-start', marginTop:10}}>
                     <Checkbox
@@ -49,7 +72,7 @@ export default function Login({ navigation: { goBack, navigate } }){
                         color={isChecked ? 'black' : undefined}/>
                     <Text style={styles.fixLogin}>Manter Conectado</Text>
                 </View>
-                <TouchableOpacity style={styles.buttonLogin}>
+                <TouchableOpacity onPress={handleSignIn} style={styles.buttonLogin}>
                     <Text style={styles.textLogin}>ENTRAR</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{alignSelf:'flex-end', marginTop: 15}}>
