@@ -26,9 +26,9 @@ export default function UserProfile({ navigation: { goBack, navigate } }) {
       colors={['#014442', '#78A967']}
       start={{x: 0, y: 0}}
       end={{x:1, y:1}}
-      style={{flex:1, padding:'10%'}}>
-      <ScrollView >
-
+      style={{flex:1,}}>
+      <ScrollView>
+      <View style={{padding:"10%"}}>
       <View style={{alignItems:'flex-start'}}>
         <Pressable onPress={() => goBack()}>
           <Image source={x16} style={{width:24, height:24}}/>
@@ -90,7 +90,7 @@ export default function UserProfile({ navigation: { goBack, navigate } }) {
           <Text style={styles.textButton}>Configurações</Text>
         </Pressable>
       </View>
-
+      </View>
       </ScrollView>
     </LinearGradient>
   );
