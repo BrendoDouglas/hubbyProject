@@ -5,6 +5,7 @@ import UserProfile from './pages/userProfile';
 import Sign from './pages/sign';
 import Signup from './pages/signup';
 import MainMenu from './pages/mainMenu';
+import RateUsers from "./pages/rateUsers";
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -25,6 +26,7 @@ export default function App() {
         <Stack.Screen name="Signup" component={Signup}/>
         <Stack.Screen name="MainMenu" component={MainMenu}/>
         <Stack.Screen name="UserProfile" component={UserProfile}/>
+        <Stack.Screen name="RateUsers" component={RateUsers}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
