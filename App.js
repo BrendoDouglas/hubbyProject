@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View,ScrollView } from 'react-native';
+import { Pressable, StyleSheet, Text, View, ScrollView } from 'react-native';
 
 import UserProfile from './pages/userProfile';
 import Sign from './pages/sign';
@@ -20,7 +20,7 @@ export default function App() {
      * e com o 'contentStyle: flex:1' faco com que as paginas criadas tenham tamanho de 100% da view */ 
     
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Sign" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
+      <Stack.Navigator initialRouteName="RateUsers" screenOptions={{headerShown: false, contentStyle:{flex:1}}}>
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="Sign" component={Sign}/>
         <Stack.Screen name="Signup" component={Signup}/>

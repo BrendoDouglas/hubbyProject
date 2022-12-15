@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, Image, Pressable, ScrollView } from 'react-native';
+import { Text, View, Image, Pressable, FlatList, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from "./styles";
@@ -18,8 +18,54 @@ import group24 from "../../assets/group24.png";
 import info24 from "../../assets/info24.png";
 import question24 from "../../assets/question24.png";
 import settings24 from "../../assets/settings24.png";
+import menu from "../../assets/menu.png";
+import people from "../../assets/people.png";
+import categoryImg from "../../assets/category.png";
+import barDoZe from "../../assets/estabelecimentos/barDoZe.jpg";
+import careca from "../../assets/estabelecimentos/careca.png";
+import basqueteOrla from "../../assets/estabelecimentos/basqueteOrla.jpg";
+
+
+const DATA = [
+  {
+    id: '1',
+    img: user64,
+    nameUser: 'André Soares',
+    stars: 5
+  },
+  {
+    id: '2',
+    img: user64,
+    nameUser: 'Paulo Souza',
+    stars: 5
+  },
+  {
+    id: '3',
+    img: user64,
+    nameUser: 'Rodrigo Santana',
+    stars: 5
+  },
+];
+
+function barrinha()
+{
+  for (let i = 0; i < DATA.length; i++) {
+    <View style={{overflow:'scroll', flex:1}}>
+      <Image source={DATA[i].img} style={{width:60,height:60, backgroundColor:'white'}}/>
+      <View style={{marginLeft:10, flex:1}}>
+        <Text style={{color:'white'}}>{DATA[i].nameUser}</Text>
+        <View style={[styles.horizontalContainer, {flex:1, display:'flex'}]}>
+        </View>
+      </View>
+    </View>
+    
+  }
+};
+
 
 export default function RateUsers({ navigation: { goBack, navigate } }) {
+  
+
   return (
     
     <LinearGradient
@@ -39,48 +85,15 @@ export default function RateUsers({ navigation: { goBack, navigate } }) {
         </View>
       </View>
 
-      <View style={{flex:1}}>
-        <Pressable style={styles.Pressable}>
-          <Image source={view24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Ver Histórico de atividade</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={addfile24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Criar evento</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={badge24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Avaliar usuários recentes</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={bell24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Notificações</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={preferences24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Preferências</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={lupa24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Buscar sala</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={group24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Amigos</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={info24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Sobre</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={question24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Ajuda</Text>
-        </Pressable>
-        <Pressable style={styles.Pressable}>
-          <Image source={settings24} style={{width:24, height:24}}/>
-          <Text style={styles.textButton}>Configurações</Text>
-        </Pressable>
+      <View style={{flex:1, backgroundColor:"black", marginTop:15, padding:15, borderRadius:15}}>
+        <Text style={{color:"white"}}>Último contato: 05/11/2022</Text>
+        
+        <View style={{flex:1,}}>
+        {barrinha()}
+        </View>
+        <Pressable style={{alignItems:'center'}}><Text style={{color:"white"}}>Seta</Text></Pressable>
       </View>
+
       </View>
       </ScrollView>
     </LinearGradient>
